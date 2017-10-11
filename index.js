@@ -162,7 +162,7 @@ function getEntities (definition, limit, page, entuOptions) {
               entities.push(opEntity)
               callback()
             })
-          }, 1000)
+          }, 400)
       }, function (error) {
         if (error) { return reject(error) }
         fulfill({ entities: entities, total: body.count, count: entities.length, page: page })
@@ -214,7 +214,7 @@ function getChilds (parentEid, definition, entuOptions) {
                 setTimeout(function () {
                   console.log('one child')
                   eachCB()
-                }, 1000)
+                }, 400)
               })
           }, function gotByDef (error) {
             if (error) { return doLoopCB(error) }
